@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Dancing+Script:wght@400..700&display=swap');
+
+.contenedor-body{
+    background-color:bisque;
+}
+header {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+header nav ul li{
+    display: inline;
+    margin: 18px;
+    font-size: 20px;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-family: "Dancing Script", cursive, sans-serif;
+}
+
+header nav ul li p {
+    color: blue;
+    text-decoration: underline;
+    font-size: 16px;
+}
+p{
+    font-family: cursive;
+}
