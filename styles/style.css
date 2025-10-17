@@ -1,17 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Dancing+Script:wght@400..700&display=swap');
+/*fuente*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-.contenedor-body{
-    background-color:white;
-}
-header {
+.contenedor-body {
     background-color: white;
+    padding-bottom: 100px; 
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
     text-align: center;
 }
 
 header nav ul {
     list-style: none;
 }
-header nav ul li{
+
+header nav ul li {
     display: inline;
     margin: 18px;
     font-size: 20px;
@@ -20,7 +27,7 @@ header nav ul li{
 header nav ul li a {
     color: black;
     text-decoration: none;
-    font-family: "Dancing Script", cursive, sans-serif;
+    font-family: "Roboto Slab", serif;
 }
 
 header nav ul li p {
@@ -28,15 +35,16 @@ header nav ul li p {
     text-decoration: underline;
     font-size: 16px;
 }
-p{
+
+p {
     font-family: cursive;
 }
 
 /* Reglas para el logo */
-.logo{
+.logo {
 
-    width: 140px; 
-    height: auto; 
+    width: 130px;
+    height: auto;
 }
 
 /* Iconos de redes sociales dentro de enlaces */
@@ -44,14 +52,60 @@ ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 10px;
+    gap: 6px; /* menos espacio entre iconos */
     align-items: center;
+    margin: 4px 0; /* reducir margen vertical de la lista */
 }
-.social-icon{
-    width: 30px; 
+
+.social-icon {
+    width: 30px;
     height: auto;
     transition: transform 0.3s ease;
 }
+
 .social-icon:hover {
     transform: scale(1.2);
+}
+
+/*estilo para el footer*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 8px 16px; /* dejar menos espacio vertical */
+    font-family: "Roboto Slab", serif;
+    box-shadow: 0 -1px 6px rgba(0,0,0,0.08);
+    z-index: 100;
+    /* altura automática para mostrar todo el contenido (h6, listas, etc.) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Reducir márgenes verticales de títulos y texto en el footer */
+footer h3, footer h6 {
+    margin: 4px 0; /* menos separación arriba/abajo */
+    line-height: 1.1;
+}
+
+footer h6 {
+    font-size: 0.9rem;
 }
