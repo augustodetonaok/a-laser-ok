@@ -15,10 +15,13 @@
 
 /*navbar */
 .nav-center {
-    font-family: "Roboto Slab", serif;
-    margin: 30px;
-    
+    font-family: "Roboto Slab", serif;  
+    font-size: 20px;
 }
+.nav-center li {
+    display: inline-block;
+  margin: 0 10px
+ }   
 
 /* Iconos de redes sociales dentro de enlaces */
 ul {
