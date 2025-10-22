@@ -116,3 +116,33 @@ footer h6 {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
+
+/* Ajustes para el carousel en el index: hacer las imágenes la mitad de alto que antes */
+#carousel {
+    /* ancho completo del contenedor */
+    width: 50%;
+    /* para que no empuje otros contenidos, mantenemos flujo normal */
+}
+
+#carousel .carousel-inner,
+#carousel .carousel-item {
+    /* Altura relativa: 30vh para adaptarse a pantallas (30% de la altura de la ventana) */
+    height: 30vh;
+    /* reservorio para evitar que sea demasiado pequeño/grande */
+    min-height: 180px; /* mínimo razonable en pantallas pequeñas */
+    max-height: 420px; /* límite en pantallas muy altas */
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    justify-content: left; /* alinea a la izquierda horizontalmente */
+}
+
+/* Las imágenes llenan el alto del contenedor y se mantienen centradas */
+#carousel img {
+    max-height: 100%; /* ocupar hasta el 100% del alto del .carousel-item */
+    height: auto;
+    width: auto; /* mantener proporción */
+    max-width: 95%; /* evitar que se salgan horizontalmente en pantallas muy angostas */
+    display: block;
+    margin: 0 auto; /* centrar horizontalmente */
+    object-fit: cover; /* evitar recortes/distorsión */
+}

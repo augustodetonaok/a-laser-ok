@@ -8,6 +8,8 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
     <title>A Laser Ok - Inicio</title>
+    <link rel="icon" href="./multimedia/favicon.png" type="image/png">
+
 </head>
 
 <body>
@@ -30,6 +32,9 @@
                                 <a class="nav-link" href="./pages/galeria.html">Galeria de Imagenes</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="./pages/tienda.html">Tienda</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="./pages/sobre_mi.html">Sobre Mi</a>
                             </li>
                             <li class="nav-item">
@@ -40,12 +45,34 @@
                 </div>
             </nav>
         </section>
-        
+
         <main>
-            <h2 id="titulo-principal">Index</h2>
+            <h2 id="titulo-principal">Mates personalizados con Grabado Láser.</h2>
             <section>
                 <h3>Imagenes</h3>
-                <p>Te mostramos algunas de los mates grabados que hacemos.</p>
+                <div id="carousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./multimedia/mate1.jpg" class="d-block w-30" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./multimedia/mate2.jpg" class="d-block w-30" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./multimedia/mate3.jpg" class="d-block w-30" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </section>
             <section>
                 <h3>Grabados</h3>
