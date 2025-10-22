@@ -3,10 +3,10 @@
 
 .contenedor-body {
     background-color: white;
-    padding-bottom: 100px; 
+    padding-bottom: 100px;
 }
 
-header {
+/* header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,12 +38,24 @@ header nav ul li p {
 
 p {
     font-family: cursive;
+} */
+.nav-center {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
+@media (max-width: 576px) {
+  .nav-center { min-height: 60vh; }
+}
+
 
 /* Reglas para el logo */
 .logo {
 
-    width: 130px;
+    width: 120px;
     height: auto;
 }
 
@@ -52,9 +64,10 @@ ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 6px; /* menos espacio entre iconos */
+    gap: 6px;
+    /* menos espacio entre iconos */
     align-items: center;
-    margin: 4px 0; 
+    margin: 4px 0;
 }
 
 .social-icon {
@@ -68,7 +81,8 @@ ul {
 }
 
 /*estilo para el footer*/
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -89,9 +103,9 @@ footer {
     width: 100%;
     background-color: white;
     text-align: center;
-    padding: 8px 16px; 
+    padding: 8px 16px;
     font-family: "Roboto Slab", serif;
-    box-shadow: 0 -1px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.08);
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -100,8 +114,10 @@ footer {
 }
 
 /* Reducir márgenes verticales de títulos y texto en el footer */
-footer h3, footer h6 {
-    margin: 4px 0; /* menos separación arriba/abajo */
+footer h3,
+footer h6 {
+    margin: 4px 0;
+    /* menos separación arriba/abajo */
     line-height: 1.1;
 }
 
@@ -128,11 +144,11 @@ footer h6 {
     height: 140px;
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gallery-img:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
