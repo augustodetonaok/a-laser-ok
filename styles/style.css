@@ -23,6 +23,7 @@
   margin: 0 10px
  }   
 
+
 /* Iconos de redes sociales dentro de enlaces */
 ul {
     list-style: none;
@@ -117,32 +118,50 @@ footer h6 {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* Ajustes para el carousel en el index: hacer las imágenes la mitad de alto que antes */
-#carousel {
-    /* ancho completo del contenedor */
-    width: 50%;
-    /* para que no empuje otros contenidos, mantenemos flujo normal */
+/* Ajustes para imagenes en el index*/
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#carousel .carousel-inner,
-#carousel .carousel-item {
-    /* Altura relativa: 30vh para adaptarse a pantallas (30% de la altura de la ventana) */
-    height: 30vh;
-    /* reservorio para evitar que sea demasiado pequeño/grande */
-    min-height: 180px; /* mínimo razonable en pantallas pequeñas */
-    max-height: 420px; /* límite en pantallas muy altas */
-    display: flex;
-    align-items: center; /* centra verticalmente */
-    justify-content: left; /* alinea a la izquierda horizontalmente */
+.galeria img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-/* Las imágenes llenan el alto del contenedor y se mantienen centradas */
-#carousel img {
-    max-height: 100%; /* ocupar hasta el 100% del alto del .carousel-item */
-    height: auto;
-    width: auto; /* mantener proporción */
-    max-width: 95%; /* evitar que se salgan horizontalmente en pantallas muy angostas */
-    display: block;
-    margin: 0 auto; /* centrar horizontalmente */
-    object-fit: cover; /* evitar recortes/distorsión */
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/*texto index*/
+.recuadro-texto {
+  background-color: #cce7ff; /* celeste suave */
+  color: #000; /* texto negro */
+  text-align: center;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto Slab", serif;
+  line-height: 1.6;
+}
+
+.recuadro-texto h2 {
+  margin-bottom: 15px;
+  color: #004c99; /* celeste más oscuro para el título */
+}
+
+.recuadro-texto:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.3) ;
 }
