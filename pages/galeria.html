@@ -49,14 +49,85 @@
     <main>
         <section class="gallery-section">
             <h2>Galería</h2>
-            <p>Hacé clic en las imágenes para ver más (links externos de ejemplo).</p>
+            <p>Hacé clic en las imágenes para verlas ampliadas.</p>
             <div class="gallery">
-                <a href="https://example.com/1" target="_blank"><img src="../multimedia/imagen.jpg" alt="mate grabado" class="gallery-img"></a>
-                <a href="https://example.com/2" target="_blank"><img src="../multimedia/logo.png" alt="logo" class="gallery-img"></a>
-                <a href="https://example.com/3" target="_blank"><img src="../multimedia/logo-face.png" alt="facebook logo" class="gallery-img"></a>
+                <div class="gallery-card">
+                    <a href="../multimedia/imagen.jpg" class="gallery-link">
+                        <img src="../multimedia/imagen.jpg" alt="mate grabado" class="gallery-img">
+                    </a>
+                    <div class="card-caption">Mate grabado</div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="../multimedia/logo.png" class="gallery-link">
+                        <img src="../multimedia/logo.png" alt="logo" class="gallery-img">
+                    </a>
+                    <div class="card-caption">Logo</div>
+                </div>
+
+                <div class="gallery-card">
+                    <a href="../multimedia/logo-face.png" class="gallery-link">
+                        <img src="../multimedia/logo-face.png" alt="facebook logo" class="gallery-img">
+                    </a>
+                    <div class="card-caption">Facebook</div>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- Lightbox / Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Cerrar">×</button>
+            <img id="lightbox-img" src="" alt="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <script>
+        // Lightbox behavior
+        (function(){
+            const links = document.querySelectorAll('.gallery-link');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            function openLightbox(src, alt){
+                lightboxImg.src = src;
+                lightboxImg.alt = alt || '';
+                lightboxCaption.textContent = alt || '';
+                lightbox.setAttribute('aria-hidden', 'false');
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox(){
+                lightbox.classList.remove('open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    const src = this.getAttribute('href');
+                    const img = this.querySelector('img');
+                    const alt = img ? img.alt : '';
+                    openLightbox(src, alt);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e){
+                if(e.target === this) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+            });
+        })();
+    </script>
 
     <footer>
             <h3>Redes Sociales</h3>

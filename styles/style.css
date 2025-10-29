@@ -26,6 +26,71 @@
 
 
 
+/* Tarjetas de galería (card look) */
+.gallery-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+    text-align: center;
+}
+.gallery-card .gallery-img {
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    width: 100%;
+}
+.card-caption {
+    padding: 8px 10px 12px;
+    font-size: 0.95rem;
+}
+
+/* Lightbox / modal styles */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 10000;
+}
+.lightbox.open { display: flex; }
+.lightbox-content {
+    max-width: 92vw;
+    max-height: 92vh;
+    background: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.lightbox-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #fff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.lightbox-caption {
+    color: #fff;
+    margin-top: 8px;
+    text-align: center;
+}
+
 
 /* Iconos de redes sociales dentro de enlaces */
 ul {
@@ -114,6 +179,26 @@ footer h6 {
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Estilos para las tarjetas de la tienda */
+.cards-row {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    padding: 16px;
+}
+
+.cards-row .card {
+    margin-bottom: 12px;
+}
+
+@media (max-width: 576px) {
+    .cards-row .card {
+        max-width: 420px;
+    }
 }
 
 .gallery-img:hover {
