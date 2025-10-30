@@ -1,10 +1,14 @@
 /*fuente*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
+:root {
+    --main-font: "Roboto Slab", serif;
+}
+
 .contenedor-body {
     padding-bottom: 30px;
-    
 }
+
 
 /* Reglas para el logo */
 .logo {
@@ -15,14 +19,15 @@
 
 /*navbar */
 .nav-center {
-    font-family: "Roboto Slab", serif;  
-    font-size: 20px;   
-    
+    font-family: var(--main-font);
+    font-size: 20px;
+
 }
+
 .nav-center li {
     display: inline-block;
-  margin: 0 10px
- }   
+    margin: 0 10px
+}
 
 
 
@@ -30,16 +35,18 @@
 .gallery-card {
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     text-align: center;
 }
+
 .gallery-card .gallery-img {
     height: 140px;
     object-fit: cover;
     display: block;
     width: 100%;
 }
+
 .card-caption {
     padding: 8px 10px 12px;
     font-size: 0.95rem;
@@ -52,10 +59,14 @@
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 10000;
 }
-.lightbox.open { display: flex; }
+
+.lightbox.open {
+    display: flex;
+}
+
 .lightbox-content {
     max-width: 92vw;
     max-height: 92vh;
@@ -65,12 +76,14 @@
     flex-direction: column;
     align-items: center;
 }
+
 .lightbox img {
     max-width: 100%;
     max-height: 80vh;
     border-radius: 6px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
+
 .lightbox-close {
     position: absolute;
     top: -12px;
@@ -83,8 +96,9 @@
     font-size: 20px;
     line-height: 1;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
 .lightbox-caption {
     color: #fff;
     margin-top: 8px;
@@ -159,10 +173,19 @@ footer h6 {
 
 /* Estilos para la galería de imágenes */
 .gallery-section {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 16px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #cce7ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.gallery-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
 
 .gallery {
     display: grid;
@@ -186,7 +209,7 @@ footer h6 {
     gap: 18px;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     padding: 16px;
 }
 
@@ -207,33 +230,34 @@ footer h6 {
 
 /* Ajustes para imagenes en el index*/
 .galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .galeria img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .galeria img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /*texto index*/
-.recuadro-texto, .sobre-mi {
+.recuadro-texto,
+.sobre-mi {
     background-color: #cce7ff;
-    color: #000; 
+    color: #000;
     text-align: center;
     padding: 30px;
     margin: 40px auto;
@@ -244,49 +268,128 @@ footer h6 {
     line-height: 1.6;
 }
 
-.recuadro-texto h3, .sobre-mi h3 {
+.recuadro-texto h3,
+.sobre-mi h3 {
     margin-bottom: 20px;
-    color: #004c99; 
+    color: #004c99;
 }
 
 /* .recuadro-texto p {
         margin-bottom: 120px;
 } */
 
-.recuadro-texto:hover, .sobre-mi:hover {
-        box-shadow: 0 0 15px rgba(0,0,0,0.3) ;
+.recuadro-texto:hover,
+.sobre-mi:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .sobre-mi {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 40px 30px;
-  background-color: #cce7ff
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background-color: #cce7ff border-radius 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sobre-mi:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .sobre-mi h2 {
-  color: #004c99;
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
+    color: #004c99;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
 }
 
 .sobre-mi p {
-  color: #333;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 18px;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
 }
 
 .sobre-mi strong {
-  color: #0a1d56;
+    color: #0a1d56;
+}
+
+/* Estilos para el formulario de contacto */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.formulario label {
+    font-weight: 600;
+    margin: 0;
+}
+
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario input[type="email"],
+.formulario textarea {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+.formulario input[type="submit"],
+.formulario input[type="reset"] {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #2d6cdf;
+    color: #fff;
+    cursor: pointer;
+    width: auto;
+    margin-top: 6px;
+}
+
+.formulario input[type="reset"] {
+    background: #888;
+}
+
+/* versión más compacta en móviles*/
+@media (max-width: 420px) {
+    .formulario {
+        gap: 6px;
+        padding: 0 6px;
+    }
+
+    .formulario input[type="submit"],
+    .formulario input[type="reset"] {
+        width: 100%;
+    }
+}
+
+.formulario-s {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #cce7ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-s:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* forzar fuente en todo el documento*/
+html,
+body {
+    font-family: var(--main-font);
 }
