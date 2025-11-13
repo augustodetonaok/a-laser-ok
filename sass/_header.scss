@@ -2,11 +2,72 @@
 @use "variables" as v;
 
 header {
+    position: relative;
     background-color: v.$background;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .menu-toggle {
+        display: none;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin: 0 10px;
+        display: inline-block;
+    }
 
     nav {
         font-family: v.$fuente;
         font-size: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+        padding: 4px 2px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 220ms ease;
+        will-change: transform;
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after {
+        transform: scaleX(1);
+    }
+
+    nav a:hover,
+    nav a:focus {
+        text-decoration: none;
+        outline: none;
     }
 
     .header-inner {
@@ -16,20 +77,22 @@ header {
         width: 100%;
         gap: 1rem;
     }
+
     .logo {
-       display: flex;
+        display: flex;
         align-items: center;
         height: 8vh;
         width: auto;
         overflow: hidden;
     }
-   .logo img {
+
+    .logo img {
         max-height: 100%;
         width: auto;
         display: block;
     }
- 
-     nav,
+
+    nav,
     .nav-center {
         margin-left: auto;
     }
@@ -52,9 +115,96 @@ header {
         font-family: var(--main-font);
         font-size: 20px;
     }
-    .nav-center li {
-    display: inline-block;
-    margin: 0 10px
-}
 
+    .nav-center li {
+        display: inline-block;
+        margin: 0 10px
+    }
+
+    @media (max-width: 992px) {
+        .header-inner {
+            gap: 0.5rem;
+        }
+
+        .logo {
+            height: 6vh;
+        }
+
+        nav {
+            font-size: 18px;
+        }
+
+        nav ul {
+            gap: 0.6rem;
+        }
+    }
+
+    /* Responsive: móvil */
+    @media (max-width: 768px) {
+        padding: 0 0.5rem;
+
+        .header-inner {
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .menu-toggle {
+            display: block;
+            background: transparent;
+            border: 0;
+            width: 40px;
+            height: 40px;
+            padding: 6px;
+            cursor: pointer;
+            color: inherit;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+            margin: 4px auto;
+            transition: transform 250ms ease, opacity 250ms ease;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: v.$background;
+            flex-direction: column;
+            gap: 0;
+            padding: 0.5rem 1rem;
+            z-index: 50;
+        }
+
+        nav.open {
+            display: flex;
+        }
+
+        nav ul {
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        nav li {
+            margin: 6px 0;
+        }
+
+        .menu-toggle.open .bar:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open .bar:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+    }
 }
+    
