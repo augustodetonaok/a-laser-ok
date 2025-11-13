@@ -1,11 +1,60 @@
 //todo el codigo de css y sass de mi header y su responsive
 @use "variables" as v;
 
-header{
+header {
     background-color: v.$background;
-    .logo{
-        width: auto
-        height: 8vh;
+
+    nav {
+        font-family: v.$fuente;
+        font-size: 20px;
     }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+    }
+    .logo {
+       display: flex;
+        align-items: center;
+        height: 8vh;
+        width: auto;
+        overflow: hidden;
+    }
+   .logo img {
+        max-height: 100%;
+        width: auto;
+        display: block;
+    }
+ 
+     nav,
+    .nav-center {
+        margin-left: auto;
+    }
+
+    nav ul,
+    .nav-center ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    .nav-center {
+        font-family: var(--main-font);
+        font-size: 20px;
+    }
+    .nav-center li {
+    display: inline-block;
+    margin: 0 10px
+}
 
 }
