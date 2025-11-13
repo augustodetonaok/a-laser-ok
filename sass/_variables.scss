@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+$fuente: Roboto Slab, serif;
+$background: rgba(0, 102, 255, 0.507);
+$fuente-primaria: darkblue;
+
+
+*{
+    font-family: $fuente;
+    color: $fuente-primaria;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
