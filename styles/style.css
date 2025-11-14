@@ -162,10 +162,13 @@ header {
     left: 0;
     right: 0;
     background: rgba(0, 102, 255, 0.507);
+    background: rgba(0, 102, 255, 0.96);
     flex-direction: column;
     gap: 0;
     padding: 0.5rem 1rem;
     z-index: 50;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(4px);
   }
   header nav.open {
     display: flex;
