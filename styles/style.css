@@ -200,6 +200,7 @@ footer {
   justify-content: center;
   flex-shrink: 0;
   margin-top: auto;
+  background-color: rgba(0, 102, 255, 0.507);
 }
 footer h3,
 footer h6 {
@@ -236,6 +237,120 @@ body {
 
 main, .content {
   flex: 1 0 auto;
+  background-color: rgba(0, 102, 255, 0.507);
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+.recuadro-texto,
+.sobre-mi {
+  background-color: rgba(0, 102, 255, 0.507);
+  color: #000;
+  text-align: center;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto Slab", serif;
+  line-height: 1.6;
+}
+
+.recuadro-texto h3,
+.sobre-mi h3 {
+  margin-bottom: 20px;
+  color: #004c99;
+}
+
+.recuadro-texto:hover,
+.sobre-mi:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  transform: scale(1.02);
+}
+
+.gallery-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(0, 102, 255, 0.507);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: center;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: zoom-in;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  padding: 2rem;
+  transition: opacity 200ms ease;
+}
+
+.gallery-modal.open {
+  display: flex;
+}
+
+.gallery-modal img {
+  max-width: 94%;
+  max-height: 94%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  cursor: zoom-out;
 }
 
 /*# sourceMappingURL=style.css.map */

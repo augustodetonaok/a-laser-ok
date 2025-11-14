@@ -8,50 +8,39 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/style.css">
     <title>A Laser Ok - Galeria</title>
-        <link rel="icon" href="../multimedia/favicon.png" type="image/png">
+    <link rel="icon" href="../multimedia/favicon.png" type="image/png">
 
 </head>
 
 <body>
-    <section class="nav-center">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="../index.html"><img src="../multimedia/logo.png" alt="logo"
-                            class="logo"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Galeria de Imagenes</a>
-                            </li>
-                             <li class="nav-item">
-                                <a class="nav-link" href="../pages/tienda.html">Tienda</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../pages/sobre_mi.html">Sobre Mi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../pages/contacto.html">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <header>
+        <div class="header-inner"><a class="logo" href="../index.html"><img src="../multimedia/logo.png" alt="logo"></a>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav>
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Galeria de Imagenes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/sobre_mi.html">Sobre Mi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">Contacto</a></li>
+                </ul>
+
             </nav>
-        </section>
-        
+        </div>
+    </header>
+
 
     <main>
         <section class="gallery-section">
             <h2>Galería</h2>
             <p>Hacé clic en las imágenes para verlas ampliadas.</p>
             <div class="gallery">
-               
+
                 <div class="gallery-card">
                     <a href="../multimedia/mate1.jpg" class="gallery-link">
                         <img src="../multimedia/mate1.jpg" alt="mate1" class="gallery-img">
@@ -65,7 +54,7 @@
                     </a>
                     <div class="card-caption">Mate 2</div>
                 </div>
-               
+
                 <div class="gallery-card">
                     <a href="../multimedia/mate3.jpg" class="gallery-link">
                         <img src="../multimedia/mate3.jpg" alt="mate3" class="gallery-img">
@@ -83,74 +72,79 @@
         </section>
     </main>
 
-    <!-- Lightbox / Modal -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-        <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Cerrar">×</button>
-            <img id="lightbox-img" src="" alt="">
-            <div id="lightbox-caption" class="lightbox-caption"></div>
-        </div>
+
+    <footer>
+        <h3>Redes Sociales</h3>
+        <ul>
+            <li><a href="https://www.instagram.com/alaser.ok" target="_blank"><img src="../multimedia/logo-insta.png"
+                        alt="logo-insta" class="social-icon"></a></li>
+            <li><a href="https://www.facebook.com/alaser.ok" target="_blank"><img src="../multimedia/logo-face.png"
+                        alt="logo-face" class="social-icon"></a></li>
+        </ul>
+        <h6>Todos los derechos reservados. Pagina creada por Augusto Detona</h6>
+
+    </footer>
+
+    <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+        <img src="" alt="Imagen ampliada">
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script>
-        // Lightbox behavior
-        (function(){
-            const links = document.querySelectorAll('.gallery-link');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const closeBtn = document.querySelector('.lightbox-close');
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('galleryModal');
+            if (!modal) return;
+            const modalImg = modal.querySelector('img');
 
-            function openLightbox(src, alt){
-                lightboxImg.src = src;
-                lightboxImg.alt = alt || '';
-                lightboxCaption.textContent = alt || '';
-                lightbox.setAttribute('aria-hidden', 'false');
-                lightbox.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeLightbox(){
-                lightbox.classList.remove('open');
-                lightbox.setAttribute('aria-hidden', 'true');
-                lightboxImg.src = '';
-                document.body.style.overflow = '';
-            }
-
-            links.forEach(link => {
-                link.addEventListener('click', function(e){
+            document.querySelectorAll('.gallery-link').forEach(link => {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const src = this.getAttribute('href');
-                    const img = this.querySelector('img');
-                    const alt = img ? img.alt : '';
-                    openLightbox(src, alt);
+                    const src = this.dataset.large || this.getAttribute('href') || this.querySelector('img')?.src;
+                    modalImg.src = src;
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
                 });
             });
 
-            closeBtn.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', function(e){
-                if(e.target === this) closeLightbox();
+            modal.addEventListener('click', function () {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                modalImg.src = '';
             });
-            document.addEventListener('keydown', function(e){
-                if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('open')) {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                    modalImg.src = '';
+                }
             });
-        })();
+        });
     </script>
+     <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.header-inner nav'); // selector más específico
 
-    <footer>
-            <h3>Redes Sociales</h3>
-            <ul>
-                <li><a href="https://www.instagram.com/alaser.ok" target="_blank"><img
-                            src="../multimedia/logo-insta.png" alt="logo-insta" class="social-icon"></a></li>
-                <li><a href="https://www.facebook.com/alaser.ok" target="_blank"><img src="../multimedia/logo-face.png"
-                            alt="logo-face" class="social-icon"></a></li>
-            </ul>
-            <h6>Todos los derechos reservados. Pagina creada por Augusto Detona</h6>
+  if (!btn || !nav) return;
 
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+  btn.addEventListener('click', function () {
+    const open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
+</script>
+
 </body>
 
 </html>
