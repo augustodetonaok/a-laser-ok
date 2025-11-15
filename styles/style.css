@@ -291,6 +291,98 @@ main, .content {
   transform: scale(1.02);
 }
 
+.cards-row {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.cards-row .card {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 576px) {
+  .cards-row .card {
+    max-width: 420px;
+  }
+}
+.gallery-img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.formulario label {
+  font-weight: 600;
+  margin: 0;
+}
+
+.formulario input[type=text],
+.formulario input[type=tel],
+.formulario input[type=email],
+.formulario textarea {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+.formulario input[type=submit],
+.formulario input[type=reset] {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2d6cdf;
+  color: #fff;
+  cursor: pointer;
+  width: auto;
+  margin-top: 6px;
+}
+
+.formulario input[type=reset] {
+  background: #888;
+}
+
+/* versión más compacta en móviles*/
+@media (max-width: 420px) {
+  .formulario {
+    gap: 6px;
+    padding: 0 6px;
+  }
+  .formulario input[type=submit],
+  .formulario input[type=reset] {
+    width: 100%;
+  }
+}
+.formulario-s {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(0, 102, 255, 0.507);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-s:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
 .gallery-section {
   margin-top: 40px;
   padding: 20px;
@@ -351,6 +443,29 @@ main, .content {
   border-radius: 8px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   cursor: zoom-out;
+}
+
+.sobre-mi:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.sobre-mi h2 {
+  color: #004c99;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.sobre-mi p {
+  color: darkblue;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.sobre-mi strong {
+  color: #0a1d56;
 }
 
 /*# sourceMappingURL=style.css.map */

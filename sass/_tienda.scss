@@ -1,0 +1,25 @@
+@use "variables" as v;
+
+.cards-row {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 16px;
+}
+
+.cards-row .card {
+    margin-bottom: 12px;
+}
+
+@media (max-width: 576px) {
+    .cards-row .card {
+        max-width: 420px;
+    }
+}
+
+.gallery-img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}

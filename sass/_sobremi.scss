@@ -1,0 +1,27 @@
+@use "variables" as v;
+
+
+
+
+.sobre-mi:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.sobre-mi h2 {
+    color: #004c99;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.sobre-mi p {
+    color: v.$fuente-primaria;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.sobre-mi strong {
+    color: #0a1d56;
+}
