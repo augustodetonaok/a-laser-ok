@@ -1,4 +1,6 @@
 @use "variables" as v;
+@use "placeholders" as *;
+@use "mixins" as *;
 
 html, body {
 	height: 100%;
@@ -7,12 +9,12 @@ html, body {
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+    min-height: 100vh;
 }
 
 main, .content {
-	flex: 1 0 auto;
-	background-color: v.$background;
+    flex: 1 0 auto;
+    background-color: v.$background;
 }
 .galeria {
     display: flex;
@@ -39,14 +41,14 @@ main, .content {
 }
 .recuadro-texto,
 .sobre-mi {
-    background-color: v.$background;
+    @extend %panel;
+    /* keep original radius to preserve look */
+    border-radius: 15px;
     color: #000;
     text-align: center;
     padding: 30px;
     margin: 40px auto;
-    border-radius: 15px;
     max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: "Roboto Slab", serif;
     line-height: 1.6;
 }
@@ -59,6 +61,6 @@ main, .content {
 .recuadro-texto:hover,
 .sobre-mi:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-	transition: transform 0.3s ease;
-	transform: scale(1.02);
+    transition: transform 0.3s ease;
+    transform: scale(1.02);
 }
