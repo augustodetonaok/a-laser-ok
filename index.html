@@ -8,6 +8,23 @@
     <title>A Laser Ok - Inicio</title>
     <link rel="icon" href="./multimedia/favicon.png" type="image/png">
 
+    <meta name="description"
+        content="Mates grabados personalizados en Concordia. Grabados a láser de alta precisión, opciones para regalos, empresas y ocasiones especiales. Pedí el tuyo hoy.">
+    <meta name="keywords" content="mates grabados, mate personalizado, grabado láser, regalos personalizados, mates artesanales, mates exclusivos, grabado en madera, grabado en cuero, mates con nombre, mates para regalo, mates en Concordia, regalos únicos, mates con diseño, mates personalizados Argentina, grabados a láser Concordia
+">
+    <meta name="author" content="Augusto Detona">
+    <meta name="owner" content="Augusto Detona">
+
+    <meta property="og:title" content="A Laser Ok - Mates Personalizados con Grabado Láser">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/augustodetonaok/a-laser-ok/refs/heads/main/multimedia/logo.png">
+    <meta property="og:url" content="https://augustodetonaok.github.io/a-laser-ok/">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Mates grabados personalizados en Concordia. Grabados a láser de alta precisión, opciones para regalos, empresas y ocasiones especiales. Pedí el tuyo hoy.">
+
+
+
 </head>
 
 <body>
@@ -19,21 +36,21 @@
                 <span class="bar"></span>
             </button>
 
-        <nav>
-            <ul>
-                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pages/galeria.html">Galeria de Imagenes</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pages/tienda.html">Tienda</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pages/sobre_mi.html">Sobre Mi</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/galeria.html">Galeria de Imagenes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/sobre_mi.html">Sobre Mi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
+                </ul>
 
-        </nav>
+            </nav>
         </div>
     </header>
 
     <main>
-        <h2 id="titulo-principal">Mates personalizados con Grabado Láser.</h2>
+        <h1 id="titulo-principal">Mates personalizados con Grabado Láser.</h1>
         <section>
             <div class="galeria">
                 <img src="./multimedia/mate1.jpg" alt="Imagen 1">
@@ -43,7 +60,7 @@
             </div>
         </section>
         <div class="recuadro-texto">
-            <h3>Personalizar tu mate con nosotros es muy simple.</h3>
+            <h2>Personalizar tu mate con nosotros es muy simple.</h2>
             <p>Primero, elegís el modelo que más te guste y realizás tu pedido. Una vez confirmado el pago, nos ponemos
                 en
                 contacto para definir el diseño: puede ser un nombre, una frase especial o una imagen significativa. Te
@@ -68,33 +85,33 @@
         <h6>Todos los derechos reservados. Pagina creada por Augusto Detona</h6>
 
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const btn = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.header-inner nav'); // selector más específico
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.header-inner nav'); // selector más específico
 
-  if (!btn || !nav) return;
+            if (!btn || !nav) return;
 
-  btn.addEventListener('click', function () {
-    const open = nav.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+            btn.addEventListener('click', function () {
+                const open = nav.classList.toggle('open');
+                btn.classList.toggle('open', open);
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
 
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  });
-});
-</script>
-</body >
+            nav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    btn.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+</body>
 
-</html >
+</html>
