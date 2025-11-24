@@ -21,6 +21,5 @@
 }
 
 .gallery-img {
-    /* preserve original visuals but reuse mixin */
     @include image-hover(1.02, 0 6px 14px rgba(0, 0, 0, 0.12));
 }

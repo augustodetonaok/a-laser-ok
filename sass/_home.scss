@@ -42,7 +42,6 @@ main, .content {
 .recuadro-texto,
 .sobre-mi {
     @extend %panel;
-    /* keep original radius to preserve look */
     border-radius: 15px;
     color: #000;
     text-align: center;

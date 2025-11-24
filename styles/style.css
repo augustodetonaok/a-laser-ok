@@ -294,7 +294,6 @@ main, .content {
 
 .recuadro-texto,
 .sobre-mi {
-  /* keep original radius to preserve look */
   border-radius: 15px;
   color: #000;
   text-align: center;
@@ -335,9 +334,6 @@ main, .content {
   .cards-row .card {
     max-width: 420px;
   }
-}
-.gallery-img {
-  /* preserve original visuals but reuse mixin */
 }
 .gallery-img:hover {
   transform: scale(1.02);
@@ -388,7 +384,6 @@ main, .content {
   background: #888;
 }
 
-/* versión más compacta en móviles*/
 @media (max-width: 420px) {
   .formulario {
     gap: 6px;
@@ -467,3 +462,5 @@ main, .content {
 .sobre-mi strong {
   color: #0a1d56;
 }
+
+/*# sourceMappingURL=style.css.map */
